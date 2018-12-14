@@ -1,0 +1,11 @@
+= form_with model: @item do |f|
+  %P= f.text_field :title
+  %p= f.file_field :image
+  %h4 Steps
+  #steps
+    = f.fields_for :steps do |step| 
+      = render 'step_fields', f: step
+    .links
+      = link_to_add_association 'add step', f, :steps
+
+  %p= f.submit

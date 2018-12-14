@@ -1,0 +1,9 @@
+.row
+  - @items.each do |item|
+    .col-4.mt-4
+      = link_to item do
+        .card.shadow
+          = image_tag item.square_image, class: "card-img-top"
+
+          .card-body
+            %p.card-item= item.title
